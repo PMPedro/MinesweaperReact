@@ -2,6 +2,12 @@
   text-align: center;
 }
 
+#info{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +41,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.tryAgain{
+  cursor: pointer;
+  margin: 0 70px;
+  border-radius: 6px;
+  background: rgb(233, 129, 9);
+  color: black;
+  padding: 15px;
+  font-weight: 1000;
+  font-family: 'Courier New', Courier, monospace;
 }

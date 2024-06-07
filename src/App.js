@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import Board from "../src/Components/Board"
+import React, { useEffect, useState } from 'react';
+
 
 function App() {
+
+  const [difficulty, setDifficulty] = useState('easy');
+
+  const handleDifficultyChange = (event) => {
+    setDifficulty(event.target.value);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1> Minesweaper</h1>
+      <div>
+        <label htmlFor="difficulty">Select Difficulty: </label>
+        <select id="difficulty" value={difficulty} onChange={handleDifficultyChange}>
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+      </div>
+      <Board difficulty={difficulty} />
     </div>
   );
 }
